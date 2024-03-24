@@ -40,5 +40,5 @@ jobs:
           echo "Step 1: Installing schemachange"
           pip install schemachange
           
-          echo "Step 2: Running schemachange"
-          schemachange -f $GITHUB_WORKSPACE/migrations  -c SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table
+          echo "Step 2: Running schemachange on $SNOWFLAKE_ACCOUNT"
+          echo "schemachange --account $SNOWFLAKE_ACCOUNT --username $SNOWFLAKE_USERNAME --role $SNOWFLAKE_ROLE --warehouse $SNOWFLAKE_WAREHOUSE --database $SNOWFLAKE_DATABASE --directory $GITHUB_WORKSPACE/migrations"
